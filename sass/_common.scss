@@ -1,0 +1,111 @@
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'), local('Roboto-Regular'), url('../fonts/Roboto.woff2') format('woff2'), url('../fonts/Roboto.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Uni Sans';
+  src: local('Uni Sans Heavy Caps'), local('UniSansHeavyCaps'), url('../fonts/unisansheavycaps.woff2') format('woff2'), url('../fonts/unisansheavycaps.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: local('Gilroy Light'), local('Gilroy-Light'), url('../fonts/Gilroylight.woff2') format('woff2'), url('../fonts/Gilroylight.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+    font-family: 'Gilroy';
+    src: local('Gilroy ExtraBold'), local('Gilroy-ExtraBold'), url('../fonts/Gilroyextrabold.woff2') format('woff2'), url('../fonts/Gilroyextrabold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  font-size: $base-font-size;
+}
+
+body {
+  @extend html;
+  font: {
+    family: $font;
+    size: $main-font-size;
+    weight: normal;
+  }
+  color: #000;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  clip: rect(0 0 0 0);
+}
+
+ul {
+  @include list;
+}
+
+.wrapper {
+  @include wrapper;
+  min-width: 290px;
+}
+
+.btn {
+  display: inline-block;
+  box-sizing: border-box;
+  
+  font: {
+    family: $font-inner;
+    size: $base-font-size * 2.2;
+    weight: bold;
+  }
+  color: #000;
+  background-color: $elem-bg-color;
+  
+  &:hover {
+    background-color: lighten($elem-bg-color, 15%);
+  }
+  
+  &:focus {
+    background-color: lighten($elem-bg-color, 15%);
+    outline: none;
+  }
+  
+  &:active {
+    background-color: lighten($elem-bg-color, 20%);
+  }
+  
+  &--buy {
+    padding: 5px 47px 8px 47px;
+    border-radius: 3px;
+  }
+  
+  &--more {
+    display: inline-block;
+    padding: 17px 31px;
+    border-radius: 3px;
+    text-align: center;
+  }
+}

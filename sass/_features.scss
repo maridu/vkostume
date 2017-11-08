@@ -1,0 +1,227 @@
+.features {
+ 
+  padding-top: 50px;
+  padding-bottom: 99px;
+  background-color: $elem-bg-color;
+  
+  @media screen and (max-width: 1015px) {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+  
+  
+  &__title {
+    margin-bottom: 55px;
+    width: 480px;
+    font: {
+      family: $font-title;
+      size: $base-font-size * 5;
+    }
+    text-transform: uppercase;
+    
+    @media screen and (max-width: 1210px) {
+      width: 100%;
+    }
+    
+    @media screen and (max-width: 1015px) {
+      margin-top: 0;
+      margin-bottom: 30px;
+      font-size: $base-font-size * 3.5;
+    }
+    
+    @media screen and (max-width: 700px) {
+      font-size: $base-font-size * 2.6;
+    }
+    
+    @media screen and (max-width: 500px) {
+      font-size: $base-font-size * 2.4;
+    }
+  }
+  
+  &__list {
+    @include col;
+    @include size(4);
+    
+    @media screen and (max-width: 1210px) {
+      @include size(6);
+    }
+    
+    @media screen and (max-width: 800px) {
+      @include size(9);
+      margin-bottom: 42px;
+    }
+    
+    @include size-xs(11);
+    
+    @media screen and (max-width: 450px) {
+      @include size(12);
+    }
+    
+    &:last-of-type {
+      @media screen and (max-width: 800px) {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  &__item {
+    position: relative;
+    padding-left: 125px;
+    padding-top: 2px;
+    margin-bottom: 42px;
+    box-sizing: border-box;
+    
+    @include xs-block {
+      padding-left: 0;
+      padding-top: 125px;
+      text-align: center;
+    }
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      content: "";
+      display: block;
+      width: 102px;
+      height: 116px;
+      background: url(../img/design/sprite.png);
+      
+      @media (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi) {
+        background: url(../img/design/sprite@2x.png);
+        background-size: 396px 266px;
+      }
+      
+      @include xs-block {
+        top: 0;
+        left: 50%;
+        margin-left: -51px;
+        margin-top: 0;
+      }
+    }
+  }
+  
+  &__name {
+    margin-top: 14px;
+    margin-bottom: 0;
+    font: {
+      family: $font-inner;
+      size: $base-font-size * 2.4;
+      weight: bold;
+    }
+    line-height: 1.25;
+  }
+  
+  &__desc {
+    margin-top: 10px;
+    font-size: $base-font-size * 1.8;
+    line-height: 1.67;
+  }
+  
+  &__photo {
+    position: absolute;
+    right: 0;
+    bottom: -99px;
+    max-width: 378px;
+    width: 32.3%;
+    
+    @media screen and (max-width: 1210px) {
+      display: none;
+    }
+  }
+  
+  &__img {
+    vertical-align: bottom;
+  }
+}
+
+.columns {
+  @include row-flex;
+  
+  position: relative;
+  
+  @media screen and (max-width: 1210px) {
+    justify-content: center;
+  }
+}
+
+.features__item {
+  &--delivery::before {
+    margin-top: -58px;
+    width: 100px;
+    height: 116px;
+    background-position: -179px -28px;
+    
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      background-position: -179px -28px;
+    }
+  }
+    
+  &--certified::before {
+    margin-top: -48px;
+    width: 96px;
+    height: 96px;
+    background-position: -73px -5px;
+    
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      background-position: -73px -5px;
+    }
+  }
+    
+  &--payment::before {
+    margin-top: -54px;
+    width: 102px;
+    height: 108px;
+    background-position: -289px -5px;
+    
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      background-position: -289px -5px;
+    }
+  }
+    
+  &--guarantee::before {
+    margin-top: -51px;
+    width: 100px;
+    height: 102px;
+    background-position: -117px -154px;
+    
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      background-position: -117px -154px;
+    }
+  }
+    
+  &--price::before {
+    top: 50%;
+    margin-top: -50px;
+    width: 102px;
+    height: 100px;
+    background-position: -289px -123px;
+    
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      background-position: -289px -123px;
+    }
+  }
+    
+  &--fitting::before {
+    margin-top: -49px;
+    width: 102px;
+    height: 98px;
+    background-position: -5px -154px;
+    
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      background-position: -5px -154px;
+    }
+  }
+}
+

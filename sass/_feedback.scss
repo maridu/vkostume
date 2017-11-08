@@ -1,0 +1,301 @@
+.feedback {
+  padding-top: 50px;
+  padding-bottom: 104px;
+  background-color: $elem-bg-color;
+  
+  @media screen and (max-width: 1015px) {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+  
+  @include sm(padding-bottom, 170px);
+  
+  &__title {
+    margin-bottom: 80px;
+    text-align: center;
+    font: {
+      family: $font-title;
+      size: $base-font-size * 5;
+    }
+    text-transform: uppercase;
+    
+    @media screen and (max-width: 1015px) {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: $base-font-size * 3.5;
+    }
+    
+    @media screen and (max-width: 700px) {
+      font-size: $base-font-size * 2.6;
+    }
+    
+    @media screen and (max-width: 500px) {
+      font-size: $base-font-size * 2.4;
+    }
+  }
+}
+
+.comments {
+  position: relative;
+  width: 100%;
+  
+  &__btn {
+    position: absolute;
+    top: 50%;
+    width: 70px;
+    height: 70px;
+    margin-top: -35px;
+    box-sizing: border-box;
+    border: none;
+    background-color: #fff;
+    border-radius: 50%;
+    
+    @include sm(top, 115%);
+    
+    &:hover {
+      cursor: pointer;
+      background-color: darken(#fff, 10%);
+    }
+    
+    &:focus {
+      cursor: pointer;
+      background-color: darken(#fff, 10%);
+      outline: none;
+    }
+    
+    &:active {
+      cursor: pointer;
+      background-color: darken(#fff, 5%);
+    }
+    
+    &::before {
+      position: absolute;
+      top: 50%;
+      display: block;
+      content: "";
+      width: 18px;
+      height: 18px;
+      margin-top: -9px;
+      box-sizing: border-box;
+      border: 5px solid $elem-bg-color;
+      border-top-color: transparent;
+      border-right-color: transparent;
+    }
+    
+    &--prev {
+      left: 0;
+      
+      @include sm(left, 35%);
+      @include xs(left, 30%);
+      @media screen and (max-width: 450px) {
+        left: 25%;
+      }
+      
+      &::before {
+        left: 30px;
+        transform: rotate(45deg);
+      }
+    }
+    
+    &--next {
+      right: 0;
+      
+      @include sm(right, 35%);
+      @include xs(right, 30%);
+      @media screen and (max-width: 450px) {
+        right: 25%;
+      }
+      
+      &::before {
+        right: 30px;
+        transform: rotate(-135deg);
+      }
+    }
+  }
+  
+  &__container {
+    width: 77%;
+    overflow: hidden;
+    margin: 0 auto;
+    
+    @include sm(width, 100%);
+  }
+  
+  &__list {
+    display: flex;
+    width: 100%;
+  }
+  
+  &__item {
+    position: relative;
+    width: 100%;
+    padding: 65px 16.7% 60px 14.65%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    
+    background-color: #fff;
+    
+    @media screen and (max-width: 1210px) {
+      padding: 35px 10% 30px 6%;
+    }
+  }
+  
+  &__title {
+    margin-bottom: 44px;
+    font: {
+      family: $font-inner;
+      size: $base-font-size * 2.4;
+      weight: bold;
+    }
+  }
+  
+  &__rating {
+    position: absolute;
+    top: 93px;
+    right: 18.4%;
+    display: block;
+    height: 15px;
+    background: url(../img/design/star_comment.png) repeat-x;
+    
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      background: url(../img/design/star_comment@2x.png) repeat-x;
+      background-size: 20px 15px;
+    }
+    
+    @media screen and (max-width: 1210px) {
+      top: 30px;
+      right: 6%;
+    }
+    
+    &--5 {
+      width: 95px;
+    }
+  }
+  
+  &__text {
+    box-sizing: border-box;
+    padding-left: 12px;
+    font-size: $base-font-size * 1.8;
+    line-height: 1.67;
+    
+    p {
+      margin-bottom: 30px;
+      
+      &:last-child {
+        margin-bottom: 13px;
+      }
+      
+      @include sm(font-size, $base-font-size * 1.6);
+    }
+  }
+  
+  &__info {
+    box-sizing: border-box;
+    padding-left: 12px;
+    font: {
+      family: $font-inner;
+      size: $base-font-size * 2.4;
+      weight: bold;
+    }
+    
+    @include sm(font-size, $base-font-size * 2);
+  }
+  
+  &__author {
+    display: inline-block;
+    margin-right: 61px;
+    
+    @include sm-block() {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+  
+  &__date {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    padding-left: 40px;
+    margin-right: 38px;
+    
+    @include sm-block() {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      display: block;
+      width: 30px;
+      height: 30px;
+      background-color: $elem-bg-color;
+      border-radius: 50%;
+    }
+    
+    &::after {
+      position: absolute;
+      top: 6px;
+      left: 7px;
+      content: "";
+      display: block;
+      width: 14px;
+      height: 13px;
+      background: url(../img/design/sprite.png) no-repeat center center;
+      background-position: -179px -5px;
+      
+      @media (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi) {
+        background: url(../img/design/sprite@2x.png) no-repeat center center;
+        background-size: 396px 266px;
+        background-position: -179px -5px;
+      }
+    }
+  }
+  
+  &__location {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    padding-left: 40px;
+    
+    @include sm-block() {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      display: block;
+      width: 30px;
+      height: 30px;
+      background-color: $elem-bg-color;
+      border-radius: 50%;
+    }
+    
+    &::after {
+      position: absolute;
+      top: 6px;
+      left: 7px;
+      content: "";
+      display: block;
+      width: 14px;
+      height: 18px;
+      background: url(../img/design/sprite.png) no-repeat center center;
+      background-position: -227px -154px;
+      
+      @media (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi) {
+        background: url(../img/design/sprite@2x.png) no-repeat center center;
+        background-size: 396px 266px;
+        background-position: -227px -154px;
+      }
+    }
+  }
+}

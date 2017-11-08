@@ -1,0 +1,69 @@
+.timer {
+  
+  &__title {
+    margin-bottom: 15px;
+    font: {
+      family: $font;
+      size: $base-font-size * 1.4;
+      weight: normal;
+    }
+    color: #fff;
+  }
+  
+  &__list {
+    font-size: 0;
+  }
+  
+  &__item {
+    display: inline-block;
+    margin-right: 10px;
+    
+    &:last-child {
+      margin-right: 0;
+      
+      .timer__time::after {
+        display: none;
+      }
+    }
+  }
+  
+  &__time {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    font: {
+      family: $font;
+      size: $base-font-size * 2.4;
+      weight: bold;
+    }
+    text-align: center;
+    line-height: 40px;
+    background-color: #fff;
+    
+    &::after {
+      position: absolute;
+      top: -2px;
+      right: -8px;
+      content: ":";
+      display: block;
+      font: {
+        family: $font;
+        size: $base-font-size * 2.4;
+        weight: bold;
+      }
+    }
+    
+  }
+  
+  &__label {
+    margin-bottom: 15px;
+    text-align: center;
+    font: {
+      family: $font;
+      size: $base-font-size * 1.1;
+      weight: bold;
+    }
+    line-height: 1.6;
+    color: #fff;
+  }
+}
