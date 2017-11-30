@@ -54,7 +54,7 @@ function setTimer(year, month, day) {
   }, 1000);
 }
 
-setTimer(2017, 11, 01);
+setTimer(2018, 00, 01);
 
 // Карусель
 var slider = document.querySelector('.comments__list'),
@@ -68,6 +68,7 @@ prevButton.addEventListener('click', function() {
   if (position < 0) {
     position += 100;
   }
+//  position += 100;
   var moveRight = 'translateX' + '\(' + position + '%\)';
   slider.style.transform = moveRight;
   slider.style.transition = 'transform 0.6s ease-in-out';
